@@ -39,7 +39,7 @@ echo $team['nickname'];
     <td><?= $team['city'];?></td>
     <td><?= $team['league'];?></td>
     <td><?= $team['last-time-champions'];?></td>
-    <td><?= $team['url'];?></td>
+    <td><a href="<?= $team['url'];?>"><?= $team['url'];?></a></td>
     </tr>
 <?php
 endforeach;
