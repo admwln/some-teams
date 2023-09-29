@@ -25,4 +25,4 @@ This website is a hand-in assignment for Yrgo WU23. Deadline 2023-10-06.
 
 - [x] The repository should contain a README.md file with documentation.
 
-- [] The repository should contain a LICENSE file. Preferably MIT.
+- [x] The repository should contain a LICENSE file. Preferably MIT.
