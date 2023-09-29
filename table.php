@@ -36,6 +36,7 @@ echo $team['nickname'];
 }
 ?>
     </td>
+    <!-- Get rest of values from $team array -->
     <td><?= $team['city'];?></td>
     <td><?= $team['league'];?></td>
     <td><?= $team['last-time-champions'];?></td>
