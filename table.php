@@ -2,49 +2,47 @@
 // Require array $teams
 require_once __DIR__."/resources/data.php";
 
-// First column heading will be 'team'
-$uniqueColumns = ['team'];
-
-// Get all unique keys from secondary array, will be used as column headings
-foreach($teams as $team){
-    foreach($team as $columnName=>$cellData){
-        $uniqueColumns[] = $columnName;
-    }  
-}
-$uniqueColumns = array_unique($uniqueColumns);
+// Create array with table headings
+//$headings = ['team'=>'Team', 'nickname'=>'Nickname', 'city'=>'City', 'league'=>'League', 'last-time-champions'=>'Last time champion', 'URL'];
+$headings = ['Team','Nickname','City','League','Last time champions','URL'];
 ?>
+    <table>
+    <thead>
+    <tr>
+<?php
+// Create first row of table with column headings from $headings array
+foreach($headings as $heading):
+?>
+    <th><?= $heading; ?></th>
+<?php
+endforeach; 
+?>
+    </tr>
+    </thead>
+    <tbody>
 
-<table>
-<tr>
-    <?php
-    // Create first row of table with column headings from $uniqueColumns array
-    foreach($uniqueColumns as $column):?>
-        <th><?= $column; ?></th>
-    <?php endforeach; 
-    //Remove 'team' from $uniqueColumns array
-    array_splice($uniqueColumns, 0, 1);
-    ?>
-</tr>
-
-<?php 
-foreach($teams as $teamName=>$teamData):?>
-        
-<tr>
-    <td><?= $teamName; ?></td>
-        
-        <?php 
-        foreach($uniqueColumns as $uniqueColumn):?>
-            <?php
-            if(array_key_exists($uniqueColumn, $teamData)):?>
-                <td><?= $teamData[$uniqueColumn]; ?></td>
-            <?php
-            elseif(!array_key_exists($uniqueColumn, $teamData)):?>
-                <td></td>
-            <?php
-            endif; ?>      
-        <?php endforeach; ?>
-</tr>
-
-<?php endforeach; ?>
-
-</table>
+<?php
+// Loop through secondary array, create one table row for each team
+foreach($teams as $teamname=>$team):
+?>
+    <tr>
+    <!-- Use current key value to get team names -->
+    <td><?= $teamname;?></td>
+    <td>
+<?php
+// Check if current team has key 'nickname', if so print nickname, else <td> will be empty
+if(array_key_exists('nickname', $team)){
+echo $team['nickname'];
+}
+?>
+    </td>
+    <td><?= $team['city'];?></td>
+    <td><?= $team['league'];?></td>
+    <td><?= $team['last-time-champions'];?></td>
+    <td><?= $team['url'];?></td>
+    </tr>
+<?php
+endforeach;
+?>
+    </tbody>
+    </table>
