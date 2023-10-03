@@ -1,11 +1,11 @@
 <?php
 
-require_once __DIR__."/resources/data.php";
+require_once __DIR__ . "/resources/data.php";
 
 $allCities = [];
 
 // Puss all city values to $allCities array
-foreach($teams as $team){
+foreach ($teams as $team) {
     $allCities[] = $team['city'];
 }
 

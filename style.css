@@ -1,24 +1,27 @@
 * {
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
-  
-td, th {
-    border: 1px solid #d3d3d3;
-    padding: 8px;
-}
-  
-tr:nth-child(even){background-color: #f2f2f2;}
-    
+
+td,
 th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #e1164c;
-    color: white;
-  }
+  border: 1px solid #d3d3d3;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #e1164c;
+  color: white;
+}
